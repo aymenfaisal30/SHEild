@@ -1,12 +1,17 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Fredoka, Nunito, Noto_Nastaliq_Urdu } from 'next/font/google'
+import { Cormorant_Garamond, DM_Sans, Noto_Nastaliq_Urdu } from 'next/font/google'
 import { Toaster } from 'sonner'
 import { DemoBanner } from '@/components/demo-banner'
 import './globals.css'
 
-const nunito = Nunito({ subsets: ['latin'], variable: '--font-nunito' })
-const fredoka = Fredoka({ subsets: ['latin'], variable: '--font-fredoka' })
+const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+})
 const nastaliq = Noto_Nastaliq_Urdu({
   subsets: ['arabic'],
   weight: ['400', '600'],
@@ -14,9 +19,9 @@ const nastaliq = Noto_Nastaliq_Urdu({
 })
 
 export const metadata: Metadata = {
-  title: 'SHEild — Personal Safety for Women in Pakistan',
+  title: 'SHEild — Personal safety for women in Pakistan',
   description:
-    'SHEild keeps you connected to the people who matter. One-tap SOS, live location sharing and trusted contacts, built for women across Pakistan.',
+    'SHEild lets you record an SOS with your live location in one press, keep trusted contacts close and reach helplines across Pakistan.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -30,7 +35,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
-  themeColor: '#1f1030',
+  themeColor: '#140B1F',
 }
 
 export default function RootLayout({
@@ -39,14 +44,25 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${nunito.variable} ${fredoka.variable} ${nastaliq.variable} bg-background`}
-    >
+    <html lang="en" className={`${dmSans.variable} ${cormorant.variable} ${nastaliq.variable} bg-background`}>
       <body className="antialiased">
         <DemoBanner />
         {children}
-        <Toaster theme="dark" position="top-center" richColors closeButton />
+        <Toaster
+          theme="dark"
+          position="top-center"
+          closeButton
+          toastOptions={{
+            classNames: {
+              toast:
+                '!rounded-2xl !border !border-white/10 !bg-[oklch(0.23_0.06_305/0.92)] !text-foreground !backdrop-blur-xl !font-sans',
+              description: '!text-muted-foreground',
+              success: '[&_[data-icon]]:!text-safe',
+              error: '[&_[data-icon]]:!text-alert',
+              warning: '[&_[data-icon]]:!text-sand',
+            },
+          }}
+        />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

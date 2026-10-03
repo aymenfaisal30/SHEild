@@ -48,7 +48,7 @@ export function Features() {
           {FEATURES.map(({ icon: Icon, title, body, accent, span }) => (
             <article
               key={title}
-              className={`group rounded-3xl border border-border bg-card/60 p-7 transition duration-500 hover:-translate-y-1 hover:border-primary/30 hover:bg-card md:p-9 ${span}`}
+              className={`group glass rounded-[1.75rem]/60 p-7 transition duration-500 hover:-translate-y-1 hover:border-primary/30 hover:bg-card md:p-9 ${span}`}
             >
               <span className={`grid size-12 place-items-center rounded-2xl ${accent}`}>
                 <Icon className="size-5" aria-hidden="true" />

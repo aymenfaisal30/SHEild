@@ -11,6 +11,7 @@ const NAV = [
   { href: '#features', label: 'Features' },
   { href: '#how-it-works', label: 'How it works' },
   { href: '#sos', label: 'SOS' },
+  { href: '#reviews', label: 'Reviews' },
   { href: '#helplines', label: 'Helplines' },
 ]
 
@@ -51,7 +52,7 @@ export function SiteHeader() {
           {token ? (
             <Link
               href="/dashboard"
-              className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+              className="bg-rose-gold rounded-full px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
             >
               Open dashboard
             </Link>
@@ -62,7 +63,7 @@ export function SiteHeader() {
               </Link>
               <Link
                 href="/signup"
-                className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+                className="bg-rose-gold rounded-full px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
               >
                 Get started
               </Link>
@@ -95,7 +96,7 @@ export function SiteHeader() {
             <Link href={token ? '/dashboard' : '/login'} className="rounded-full border border-border py-3 text-center text-sm font-medium">
               {token ? 'Dashboard' : 'Log in'}
             </Link>
-            <Link href="/signup" className="rounded-full bg-primary py-3 text-center text-sm font-semibold text-primary-foreground">
+            <Link href="/signup" className="bg-rose-gold rounded-full py-3 text-center text-sm font-semibold text-primary-foreground">
               Get started
             </Link>
           </div>

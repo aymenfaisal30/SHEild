@@ -192,7 +192,7 @@ function SosTrigger({
       <div className="grid gap-4 sm:grid-cols-3">
         <InfoTile icon={MapPin} title="Location" text="Your GPS coordinates are attached to the alert." />
         <InfoTile icon={Users} title={`${contactCount} contacts`} text="Contacts are saved; SMS alerts are coming soon." />
-        <a href="tel:15" className="rounded-3xl border border-border bg-card p-6 transition hover:border-alert/40">
+        <a href="tel:15" className="glass rounded-[1.75rem] p-6 transition hover:border-alert/40">
           <Phone className="size-5 text-alert" aria-hidden="true" />
           <p className="mt-4 font-semibold">Call Police 15</p>
           <p className="mt-1 text-sm text-muted-foreground">If you are in immediate danger, call now.</p>
@@ -307,7 +307,7 @@ function ActiveAlert({
 
 function InfoTile({ icon: Icon, title, text }: { icon: typeof MapPin; title: string; text: string }) {
   return (
-    <div className="rounded-3xl border border-border bg-card p-6">
+    <div className="glass rounded-[1.75rem] p-6">
       <Icon className="size-5 text-primary" aria-hidden="true" />
       <p className="mt-4 font-semibold">{title}</p>
       <p className="mt-1 text-sm text-muted-foreground">{text}</p>
