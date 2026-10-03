@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { Mascot } from '@/components/brand/mascot'
 import { Logo, UrduTagline } from '@/components/brand/logo'
 
 export function AuthShell({
@@ -22,13 +22,7 @@ export function AuthShell({
         <p className="text-center text-xs text-muted-foreground lg:text-left">In an emergency, always call 15.</p>
       </main>
       <aside className="relative hidden overflow-hidden lg:block" aria-hidden="true">
-        <Image
-          src="/images/faisal-mosque-night.jpg"
-          alt=""
-          fill
-          sizes="50vw"
-          className="animate-ken-burns object-cover object-[65%_center]"
-        />
+        <div className="absolute inset-0 grid place-items-center md:place-items-end md:pr-[8%] lg:place-items-center lg:justify-items-end"><Mascot className="animate-float w-[min(78%,24rem)] drop-shadow-[0_20px_60px_oklch(0.82_0.13_350/0.35)]" /></div>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/40" />
         <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent" />
         <div className="absolute inset-x-0 bottom-0 p-14">

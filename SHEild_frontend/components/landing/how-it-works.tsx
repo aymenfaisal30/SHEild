@@ -12,7 +12,7 @@ const STEPS = [
   {
     n: '03',
     title: 'Press when it matters',
-    body: 'Hold SOS for three seconds. Your circle gets your location and you can call 15 in one tap.',
+    body: 'Hold SOS for three seconds. Your alert is saved with your location and you can call 15 in one tap.',
   },
 ]
 

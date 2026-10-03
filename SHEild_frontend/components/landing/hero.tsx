@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { Mascot } from '@/components/brand/mascot'
 import Link from 'next/link'
 import { ArrowRight, MapPin, Phone, ShieldCheck } from 'lucide-react'
 import { UrduTagline } from '@/components/brand/logo'
@@ -7,18 +7,11 @@ export function Hero() {
   return (
     <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden pb-16 pt-32 md:items-center md:pb-24">
       <div className="absolute inset-0 -z-20 overflow-hidden">
-        <Image
-          src="/images/faisal-mosque-night.jpg"
-          alt="Faisal Mosque illuminated at night beneath the Margalla Hills, Islamabad"
-          fill
-          priority
-          sizes="100vw"
-          className="animate-ken-burns object-cover object-[60%_center] md:object-center"
-        />
+        <div className="absolute inset-0 grid place-items-center md:place-items-end md:pr-[8%] lg:place-items-center lg:justify-items-end"><Mascot className="animate-float w-[min(78%,24rem)] drop-shadow-[0_20px_60px_oklch(0.82_0.13_350/0.35)]" /></div>
       </div>
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,oklch(0.14_0.035_268/0.96)_0%,oklch(0.14_0.035_268/0.75)_42%,oklch(0.14_0.035_268/0.25)_75%,oklch(0.14_0.035_268/0.55)_100%)]"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,oklch(0.14_0.05_305/0.96)_0%,oklch(0.14_0.05_305/0.75)_42%,oklch(0.14_0.05_305/0.25)_75%,oklch(0.14_0.05_305/0.55)_100%)]"
       />
       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 -z-10 h-2/5 bg-gradient-to-t from-background to-transparent" />
       <div aria-hidden="true" className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-background/80 to-transparent" />
@@ -38,7 +31,7 @@ export function Hero() {
           </h1>
           <UrduTagline className="animate-fade-up mt-5 text-right text-2xl [animation-delay:220ms] sm:text-3xl md:text-left" />
           <p className="animate-fade-up mt-5 max-w-xl text-pretty text-lg leading-relaxed text-foreground/75 [animation-delay:320ms]">
-            SHEild connects you to the people you trust with a single press. Share your live location, alert your circle
+            SHEild lets you record an SOS with your live location in a single press, keep your trusted contacts in one place
             and reach help across Islamabad, Lahore, Karachi and beyond.
           </p>
           <div className="animate-fade-up mt-9 flex flex-col gap-3 [animation-delay:420ms] sm:flex-row">
@@ -96,7 +89,7 @@ function HeroSafetyCards() {
           </span>
         </div>
         <p className="mt-4 text-sm font-medium">F-7 Markaz, Islamabad</p>
-        <p className="text-xs text-muted-foreground">Updated just now · 3 contacts watching</p>
+        <p className="text-xs text-muted-foreground">Updated just now · location captured</p>
       </div>
 
       <div className="animate-float absolute bottom-24 left-0 w-64 rounded-3xl border border-white/10 bg-background/55 p-4 shadow-2xl backdrop-blur-xl [animation-delay:1.5s]">
@@ -104,7 +97,7 @@ function HeroSafetyCards() {
           <span className="grid size-10 place-items-center rounded-full bg-sand/15 font-serif text-sand">A</span>
           <div className="min-w-0">
             <p className="truncate text-sm font-medium">Ammi</p>
-            <p className="text-xs text-muted-foreground">Received your location</p>
+            <p className="text-xs text-muted-foreground">Primary contact</p>
           </div>
           <Phone className="ml-auto size-4 text-primary" />
         </div>
@@ -114,7 +107,7 @@ function HeroSafetyCards() {
         <span className="grid size-9 place-items-center rounded-full bg-alert text-white">
           <ShieldCheck className="size-4" />
         </span>
-        <span className="text-sm font-medium">You reached home safely</span>
+        <span className="text-sm font-medium">Alert recorded with location</span>
       </div>
     </div>
   )

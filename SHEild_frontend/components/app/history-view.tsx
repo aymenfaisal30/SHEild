@@ -118,7 +118,7 @@ export function HistoryView() {
                   )}
                   <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-border pt-4 text-xs text-muted-foreground">
                     <span className="inline-flex items-center gap-1.5">
-                      <Users className="size-3.5" aria-hidden="true" /> {a.contactsNotified} notified
+                      <Users className="size-3.5" aria-hidden="true" /> Alert recorded
                     </span>
                     <span className="inline-flex items-center gap-1.5">
                       <Clock className="size-3.5" aria-hidden="true" />

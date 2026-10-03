@@ -28,14 +28,14 @@ export function SosView() {
       message: message.trim() || undefined,
     })
     await mutate((current) => [alert, ...(current ?? []).filter((a) => a.id !== alert.id)], { revalidate: true })
-    if (!position) toast.warning('Location unavailable. Your contacts were alerted without coordinates.')
+    if (!position) toast.warning('Location unavailable. Your alert was saved without coordinates.')
   }
 
   async function finish(kind: 'resolve' | 'cancel') {
     if (!active) return
     const updated = kind === 'resolve' ? await sosService.resolve(active.id) : await sosService.cancel(active.id)
     await mutate((current) => current?.map((a) => (a.id === updated.id ? updated : a)), { revalidate: true })
-    toast.success(kind === 'resolve' ? 'Glad you are safe. Your contacts have been told.' : 'Alert cancelled.')
+    toast.success(kind === 'resolve' ? 'Glad you are safe. Alert marked as resolved.' : 'Alert cancelled.')
   }
 
   if (isLoading) return <Skeleton className="h-[520px]" />
@@ -108,12 +108,12 @@ function SosTrigger({
       <PageHeader
         eyebrow="Emergency"
         title="SOS"
-        description="Press and hold the button. Your location will be sent to every trusted contact."
+        description="Press and hold the button. Your alert is saved with your location. Contact notifications are coming soon."
       />
 
       {contactCount === 0 && (
         <div className="flex flex-col items-start justify-between gap-3 rounded-2xl border border-sand/30 bg-sand/10 p-5 sm:flex-row sm:items-center">
-          <p className="text-sm text-foreground/80">You have no trusted contacts yet, so nobody will be notified.</p>
+          <p className="text-sm text-foreground/80">You have no trusted contacts yet, so add some now. Notifications to contacts are coming soon.</p>
           <Link href="/contacts" className="text-sm font-semibold text-sand hover:underline">
             Add a contact
           </Link>
@@ -191,7 +191,7 @@ function SosTrigger({
 
       <div className="grid gap-4 sm:grid-cols-3">
         <InfoTile icon={MapPin} title="Location" text="Your GPS coordinates are attached to the alert." />
-        <InfoTile icon={Users} title={`${contactCount} contacts`} text="Everyone in your circle is notified at once." />
+        <InfoTile icon={Users} title={`${contactCount} contacts`} text="Contacts are saved; SMS alerts are coming soon." />
         <a href="tel:15" className="rounded-3xl border border-border bg-card p-6 transition hover:border-alert/40">
           <Phone className="size-5 text-alert" aria-hidden="true" />
           <p className="mt-4 font-semibold">Call Police 15</p>
@@ -243,12 +243,12 @@ function ActiveAlert({
           </p>
         </div>
         <h1 className="mt-6 max-w-lg text-balance font-serif text-4xl font-medium leading-tight md:text-5xl">
-          Help is on the way. Your circle has been alerted.
+          Your alert is recorded. Call 15 now if you need immediate help.
         </h1>
         <dl className="mt-10 grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border border-border bg-background/50 p-5">
-            <dt className="text-xs uppercase tracking-wider text-muted-foreground">Contacts notified</dt>
-            <dd className="mt-2 font-serif text-3xl">{alert.contactsNotified}</dd>
+            <dt className="text-xs uppercase tracking-wider text-muted-foreground">Status</dt>
+            <dd className="mt-2 font-serif text-3xl">Recorded</dd>
           </div>
           <div className="rounded-2xl border border-border bg-background/50 p-5">
             <dt className="text-xs uppercase tracking-wider text-muted-foreground">Location shared</dt>

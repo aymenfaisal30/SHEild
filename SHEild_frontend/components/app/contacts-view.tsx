@@ -191,7 +191,7 @@ export function ContactsView({ welcome }: { welcome: boolean }) {
         <AlertDialogContent className="rounded-3xl bg-card">
           <AlertDialogHeader>
             <AlertDialogTitle>Remove {deleting?.name}?</AlertDialogTitle>
-            <AlertDialogDescription>They will no longer be alerted when you trigger an SOS.</AlertDialogDescription>
+            <AlertDialogDescription>This contact will be removed from your circle.</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Keep contact</AlertDialogCancel>

@@ -46,7 +46,7 @@ export function DashboardView() {
       <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr]">
         <section className="relative overflow-hidden rounded-3xl border border-border bg-[radial-gradient(ellipse_at_top_right,oklch(0.64_0.2_18/0.25),transparent_60%)] bg-card p-7 md:p-9">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Emergency</p>
-          <h2 className="mt-3 max-w-sm font-serif text-3xl font-medium leading-tight">Feel unsafe? Alert your circle in three seconds.</h2>
+          <h2 className="mt-3 max-w-sm font-serif text-3xl font-medium leading-tight">Feel unsafe? Record an SOS in three seconds.</h2>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/sos"

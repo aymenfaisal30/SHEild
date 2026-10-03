@@ -1,15 +1,12 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Fraunces, Manrope, Noto_Nastaliq_Urdu } from 'next/font/google'
+import { Fredoka, Nunito, Noto_Nastaliq_Urdu } from 'next/font/google'
 import { Toaster } from 'sonner'
+import { DemoBanner } from '@/components/demo-banner'
 import './globals.css'
 
-const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' })
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-fraunces',
-  axes: ['opsz'],
-})
+const nunito = Nunito({ subsets: ['latin'], variable: '--font-nunito' })
+const fredoka = Fredoka({ subsets: ['latin'], variable: '--font-fredoka' })
 const nastaliq = Noto_Nastaliq_Urdu({
   subsets: ['arabic'],
   weight: ['400', '600'],
@@ -33,7 +30,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
-  themeColor: '#10152b',
+  themeColor: '#1f1030',
 }
 
 export default function RootLayout({
@@ -44,9 +41,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${fraunces.variable} ${nastaliq.variable} bg-background`}
+      className={`${nunito.variable} ${fredoka.variable} ${nastaliq.variable} bg-background`}
     >
       <body className="antialiased">
+        <DemoBanner />
         {children}
         <Toaster theme="dark" position="top-center" richColors closeButton />
         {process.env.NODE_ENV === 'production' && <Analytics />}

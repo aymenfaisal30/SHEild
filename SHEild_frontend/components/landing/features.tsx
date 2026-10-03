@@ -4,14 +4,14 @@ const FEATURES = [
   {
     icon: BellRing,
     title: 'One-press SOS',
-    body: 'Hold the SOS button for three seconds and your trusted circle is alerted instantly with your exact location.',
+    body: 'Hold the SOS button for three seconds and your alert is recorded with your exact location, with a one-tap call to 15 when you need help right now.',
     accent: 'bg-alert/15 text-alert',
     span: 'md:col-span-2',
   },
   {
     icon: MapPinned,
     title: 'Live location',
-    body: 'Share where you are on the way home, in a rickshaw or after late classes.',
+    body: 'Capture where you are on the way home, in a rickshaw or after late classes.',
     accent: 'bg-primary/15 text-primary',
     span: '',
   },
