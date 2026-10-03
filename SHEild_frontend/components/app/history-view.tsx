@@ -92,7 +92,7 @@ export function HistoryView() {
               >
                 <span
                   className={cn(
-                    'relative z-10 mt-6 grid size-14 shrink-0 place-items-center rounded-2xl border border-border bg-card md:size-16',
+                    'relative z-10 mt-6 grid size-14 shrink-0 place-items-center glass rounded-2xl md:size-16',
                     a.status === 'ACTIVE' && 'border-alert/50',
                   )}
                 >
@@ -104,7 +104,7 @@ export function HistoryView() {
                     aria-hidden="true"
                   />
                 </span>
-                <article className="flex-1 rounded-3xl border border-border bg-card p-6">
+                <article className="flex-1 glass rounded-[1.75rem] p-6">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <h2 className="font-semibold">{formatDateTime(a.createdAt)}</h2>
                     <StatusBadge status={a.status} />

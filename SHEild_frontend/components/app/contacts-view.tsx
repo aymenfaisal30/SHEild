@@ -78,7 +78,7 @@ export function ContactsView({ welcome }: { welcome: boolean }) {
             type="button"
             onClick={openCreate}
             disabled={atLimit}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
+            className="inline-flex items-center justify-center gap-2 bg-rose-gold rounded-full px-6 py-3.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
           >
             <Plus className="size-4" aria-hidden="true" /> Add contact
           </button>
@@ -123,7 +123,7 @@ export function ContactsView({ welcome }: { welcome: boolean }) {
           <button
             type="button"
             onClick={openCreate}
-            className="mt-6 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground"
+            className="mt-6 bg-rose-gold rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground"
           >
             Add your first contact
           </button>
@@ -133,7 +133,7 @@ export function ContactsView({ welcome }: { welcome: boolean }) {
           {sorted.map((c, i) => (
             <li
               key={c.id}
-              className="animate-fade-up group flex flex-col rounded-3xl border border-border bg-card p-6 transition hover:border-primary/30"
+              className="animate-fade-up group flex flex-col glass rounded-[1.75rem] p-6 transition hover:border-primary/30"
               style={{ animationDelay: `${i * 60}ms` }}
             >
               <div className="flex items-start gap-4">

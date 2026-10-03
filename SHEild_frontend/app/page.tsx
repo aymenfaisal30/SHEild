@@ -5,6 +5,9 @@ import { HowItWorks } from '@/components/landing/how-it-works'
 import { SiteFooter } from '@/components/landing/site-footer'
 import { SiteHeader } from '@/components/landing/site-header'
 import { SosShowcase } from '@/components/landing/sos-showcase'
+import { Testimonials } from '@/components/landing/testimonials'
+
+export const revalidate = 60
 
 export default function HomePage() {
   return (
@@ -15,6 +18,7 @@ export default function HomePage() {
         <Features />
         <HowItWorks />
         <SosShowcase />
+        <Testimonials />
         <Helplines />
         <FinalCta />
       </main>
