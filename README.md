@@ -121,7 +121,7 @@ Women Helpline (Punjab)	1043
 
 Author
 
-Aymen Faisal 🔗 linkedin.com/in/aymen-faisal-0b58ab377 
+Aymen Faisal 🔗linkedin.com/in/aymen-faisal-0b58ab377
 Email  aymenfaisal30@gmail.com
 
 Built with a lot of persistence and a lot of chai, to help girls feel safer. 💜
