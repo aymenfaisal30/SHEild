@@ -55,16 +55,47 @@ export function Hero() {
 
         <div className="animate-fade-up relative mx-auto w-full max-w-md [animation-delay:250ms] lg:max-w-lg">
           <div aria-hidden="true" className="absolute inset-8 -z-10 rounded-full bg-primary/25 blur-[90px]" />
-          <div className="glass relative overflow-hidden rounded-[2.5rem] p-2">
-            <Image
-              src="/images/hero-phone.png"
-              alt="A hand holding a phone running SHEild, showing a live route on a city map with trusted women contacts and an SOS button"
-              width={896}
-              height={1200}
-              priority
-              className="h-auto w-full rounded-[2.1rem]"
-            />
-            <div aria-hidden="true" className="absolute inset-x-2 bottom-2 h-1/3 rounded-b-[2.1rem] bg-gradient-to-t from-background/80 to-transparent" />
+          <div
+            role="img"
+            aria-label="Preview of the SHEild app showing the SOS button and trusted contacts"
+            className="glass relative mx-auto w-full max-w-sm overflow-hidden rounded-[2.5rem] p-6 sm:p-8"
+          >
+            <div aria-hidden="true" className="flex items-center justify-between text-xs text-muted-foreground">
+              <span>9:41</span>
+              <span className="inline-flex items-center gap-1.5">
+                <span className="size-1.5 rounded-full bg-safe" />
+                Location on
+              </span>
+            </div>
+            <p className="mt-6 text-sm text-muted-foreground">Assalam-o-Alaikum</p>
+            <p className="font-serif text-2xl font-light">You are safe, Ayesha</p>
+
+            <div className="relative mx-auto my-10 grid size-44 place-items-center">
+              <span aria-hidden="true" className="absolute inset-0 animate-ping rounded-full bg-primary/15 [animation-duration:3s]" />
+              <span aria-hidden="true" className="absolute inset-3 rounded-full border border-primary/30" />
+              <span className="bg-rose-gold relative grid size-32 place-items-center rounded-full font-serif text-3xl font-medium tracking-widest text-primary-foreground shadow-[0_0_60px_-6px] shadow-primary/70">
+                SOS
+              </span>
+            </div>
+
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Trusted circle</p>
+            <ul className="mt-3 space-y-2">
+              {[
+                ['AK', 'Ammi', 'Notified instantly'],
+                ['SF', 'Sana Farooq', 'Lahore'],
+                ['HM', 'Hira Malik', 'Islamabad'],
+              ].map(([initials, name, meta]) => (
+                <li key={name} className="flex items-center gap-3 rounded-2xl border border-primary/10 bg-primary/5 px-3 py-2.5">
+                  <span className="grid size-9 place-items-center rounded-full bg-primary/15 text-xs font-semibold text-primary">
+                    {initials}
+                  </span>
+                  <span className="text-sm">
+                    <span className="block font-medium">{name}</span>
+                    <span className="text-xs text-muted-foreground">{meta}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div
